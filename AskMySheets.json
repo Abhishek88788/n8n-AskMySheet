@@ -1,0 +1,385 @@
+{
+  "name": "AskMySheets",
+  "nodes": [
+    {
+      "parameters": {
+        "text": "",
+        "options": {
+          "systemMessage": "we only  have 4 sheets  Student Details,Test Scores,Attendance & Activities,Fee Records these sheets contain data as per there name they have."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        528,
+        -224
+      ],
+      "id": "3e759553-f85e-4e74-9871-6536092864e3",
+      "name": "AI Agent",
+      "alwaysOutputData": false
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        336,
+        112
+      ],
+      "id": "340832a6-21bf-48c7-9a0c-8535da14df1f",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "options": {
+          "responseMode": "lastNode"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        64,
+        -112
+      ],
+      "id": "cd0b0aea-29ce-44ec-968b-8d182d609462",
+      "name": "When chat message received",
+      "webhookId": "3f99f841-89ea-4770-b510-43778a1880f5"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1A3vOaSVVZ-TUOTsiKe7WF-Vjz8Nq7W4gzEVnjPcgFIQ",
+          "mode": "list",
+          "cachedResultName": "AskMySheets - Student Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A3vOaSVVZ-TUOTsiKe7WF-Vjz8Nq7W4gzEVnjPcgFIQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Sheet', ``, 'string') }}",
+          "mode": "name"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        496,
+        96
+      ],
+      "id": "7169b3c0-e9af-41ab-b2b1-e3129c042b5d",
+      "name": "Get row(s) in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "OEiK2BePR3sa2g9b",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1A3vOaSVVZ-TUOTsiKe7WF-Vjz8Nq7W4gzEVnjPcgFIQ",
+          "mode": "list",
+          "cachedResultName": "AskMySheets - Student Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A3vOaSVVZ-TUOTsiKe7WF-Vjz8Nq7W4gzEVnjPcgFIQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Sheet', ``, 'string') }}",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        688,
+        144
+      ],
+      "id": "ededbf4b-b66e-4460-adcc-15495e14b466",
+      "name": "Append row in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "OEiK2BePR3sa2g9b",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {
+          "__rl": true,
+          "value": "1A3vOaSVVZ-TUOTsiKe7WF-Vjz8Nq7W4gzEVnjPcgFIQ",
+          "mode": "list",
+          "cachedResultName": "AskMySheets - Student Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A3vOaSVVZ-TUOTsiKe7WF-Vjz8Nq7W4gzEVnjPcgFIQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Sheet', ``, 'string') }}",
+          "mode": "name"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "row_number": 0,
+            "Student ID": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Student_ID__using_to_match_', ``, 'string') }}",
+            "Subject": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Subject', ``, 'string') }}",
+            "Test Date": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Test_Date', ``, 'string') }}",
+            "Score": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Score', ``, 'string') }}",
+            "Sheet": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Sheet', ``, 'string') }}"
+          },
+          "matchingColumns": [
+            "Student ID"
+          ],
+          "schema": [
+            {
+              "id": "Student ID",
+              "displayName": "Student ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Subject",
+              "displayName": "Subject",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Test Date",
+              "displayName": "Test Date",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Score",
+              "displayName": "Score",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Sheet",
+              "displayName": "Sheet",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "row_number",
+              "displayName": "row_number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "number",
+              "canBeUsedToMatch": true,
+              "readOnly": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        896,
+        128
+      ],
+      "id": "98127c6e-ed4e-45ca-aba0-6b1efd7ecf64",
+      "name": "Update row in sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "OEiK2BePR3sa2g9b",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "documentId": {
+          "__rl": true,
+          "value": "1A3vOaSVVZ-TUOTsiKe7WF-Vjz8Nq7W4gzEVnjPcgFIQ",
+          "mode": "list",
+          "cachedResultName": "AskMySheets - Student Database",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1A3vOaSVVZ-TUOTsiKe7WF-Vjz8Nq7W4gzEVnjPcgFIQ/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Sheet', ``, 'string') }}",
+          "mode": "name"
+        },
+        "toDelete": "=rows",
+        "startIndex": "A"
+      },
+      "type": "n8n-nodes-base.googleSheetsTool",
+      "typeVersion": 4.7,
+      "position": [
+        1072,
+        64
+      ],
+      "id": "af8ef4ba-8022-48f7-b230-b3ee7bafcbcb",
+      "name": "Delete rows or columns from sheet in Google Sheets",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "OEiK2BePR3sa2g9b",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        160,
+        96
+      ],
+      "id": "257d58a7-c09f-40e5-97a7-f442ea3d4c40",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "qVC0PCRkauGfx6Bw",
+          "name": "OpenAi account 3"
+        }
+      },
+      "disabled": true
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        []
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Update row in sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Delete rows or columns from sheet in Google Sheets": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "ac271173-1b80-4721-9b4d-24402e9b583e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "641217f7faee7c131eccc08d10e342cda2a3ec1e68dcc7bf5bc4f4b59150c78a"
+  },
+  "id": "pIK62ydikD4tdlv7",
+  "tags": []
+}
