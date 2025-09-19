@@ -214,7 +214,7 @@ graph TD
 
 ```bash
 # 1️⃣ Download the workflow
-curl -L -o AskMySheets.json https://github.com/[YOUR-USERNAME]/n8n-AskMySheets/raw/main/AskMySheets.json
+curl -L -o AskMySheets.json https://github.com/Abhishek88788/n8n-AskMySheets/raw/main/AskMySheets.json
 
 # 2️⃣ Import to n8n
 # Drag & drop AskMySheets.json into your n8n instance
@@ -447,9 +447,9 @@ curl -L -o AskMySheets.json https://github.com/[YOUR-USERNAME]/n8n-AskMySheets/r
 
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/[YOUR-USERNAME]/n8n-AskMySheets?style=social)](https://github.com/[YOUR-USERNAME]/n8n-AskMySheets/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/[YOUR-USERNAME]/n8n-AskMySheets?style=social)](https://github.com/[YOUR-USERNAME]/n8n-AskMySheets/network)
-[![GitHub issues](https://img.shields.io/github/issues/[YOUR-USERNAME]/n8n-AskMySheets?style=social)](https://github.com/[YOUR-USERNAME]/n8n-AskMySheets/issues)
+[![GitHub stars](https://img.shields.io/github/stars/Abhishek88788/n8n-AskMySheets?style=social)](https://github.com/Abhishek88788/n8n-AskMySheets/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Abhishek88788/n8n-AskMySheets?style=social)](https://github.com/Abhishek88788/n8n-AskMySheets/network)
+[![GitHub issues](https://img.shields.io/github/issues/Abhishek88788/n8n-AskMySheets?style=social)](https://github.com/Abhishek88788/n8n-AskMySheets/issues)
 
 </div>
 
@@ -527,7 +527,7 @@ curl -L -o AskMySheets.json https://github.com/[YOUR-USERNAME]/n8n-AskMySheets/r
 
 ## 🙏 Credits & Acknowledgments
 
-<img src="https://contrib.rocks/image?repo=[YOUR-USERNAME]/n8n-AskMySheets" />
+<img src="https://contrib.rocks/image?repo=Abhishek88788/n8n-AskMySheets" />
 
 *Built with* ❤️ *for educators worldwide using:*
 
@@ -546,8 +546,8 @@ curl -L -o AskMySheets.json https://github.com/[YOUR-USERNAME]/n8n-AskMySheets/r
 
 *From spreadsheet chaos to intelligent conversations in minutes* ✨
 
-[![Download Workflow](https://img.shields.io/badge/Download-Workflow-success?style=for-the-badge&logo=download)](https://github.com/[YOUR-USERNAME]/n8n-AskMySheets/raw/main/AskMySheets.json)
-[![Star Repository](https://img.shields.io/badge/⭐-Star%20Repo-yellow?style=for-the-badge)](https://github.com/[YOUR-USERNAME]/n8n-AskMySheets)
+[![Download Workflow](https://img.shields.io/badge/Download-Workflow-success?style=for-the-badge&logo=download)](https://github.com/Abhishek88788/n8n-AskMySheets/raw/main/AskMySheets.json)
+[![Star Repository](https://img.shields.io/badge/⭐-Star%20Repo-yellow?style=for-the-badge)](https://github.com/Abhishek88788/n8n-AskMySheets)
 
 **Webhook ID**: `3f99f841-89ea-4770-b510-43778a1880f5`  
 **Workflow ID**: `pIK62ydikD4tdlv7`
